@@ -49,4 +49,5 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /appdata/citest
+            git checkout main
             git pull
