@@ -17,7 +17,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    environment: dev
     steps:
       - name: Deploy to aliyun Dev environment # 为 step 指定一个名称，将会在 github action 的控制台中显示
         uses: appleboy/ssh-action@v0.1.10
