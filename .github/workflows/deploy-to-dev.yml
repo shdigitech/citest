@@ -27,6 +27,6 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /appdata/citest
+            cd ${{ vars.CODE_PATH }}
             git checkout main
             git pull
