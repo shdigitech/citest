@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Deploy to Dev
 
 # Controls when the workflow will run
@@ -15,11 +13,12 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # deploy to aliyun dev environment
   deploy:
-    runs-on: ubuntu-latest
-    environment: dev
+    runs-on: ubuntu-latest    
+    environment: dev # specifing environment is necessary for corresponding secrets and vars
     steps:
-      - name: Deploy to aliyun Dev environment # 为 step 指定一个名称，将会在 github action 的控制台中显示
+      - name: Deploy to Aliyun Dev environment # Specify a name for each step, which will show up on github action dashboard
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ secrets.HOST }}
